@@ -22,6 +22,7 @@ import { Card } from './Card';
 
     function handleChange(event: {target: {value: React.SetStateAction<string>}}){
       let text = event.target.value;
+      setNewMessage(text)
 
     }
 
