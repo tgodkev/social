@@ -5,6 +5,8 @@ import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp} from 'f
 import { auth } from '../firebase-config';
 import { useEffect } from 'react';
 import { Fancy } from './Card';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 
 
@@ -70,8 +72,8 @@ import { Fancy } from './Card';
       <Header />
 
       <div className='userinput' >
-        <input type="text" placeholder= 'entermessage' onChange={handleChange} />
-        <button onClick={() => saveMessage()}>Send.</button>
+      <TextField id="standard-basic" label="Enter Message." variant="standard" className="textfield" onChange={handleChange}/>
+      <Button variant="outlined" onClick={() => saveMessage()}>Send Message</Button>
       </div> 
 
 

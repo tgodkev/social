@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
 import { auth } from '../firebase-config';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 interface HeaderProps {
 
@@ -42,8 +44,11 @@ export const Header: React.FC<HeaderProps> = ({}) => {
                </div>
 
                 <div className='userlogin'>
-                <button onClick={login}>sign in </button>
-                {SignedIn && <button onClick={logout}>Sign Out.</button> }
+
+                <Stack spacing={1} direction="row">
+                <Button variant="contained" style={{height: 50}}  onClick={login}>Sign In.</Button>
+               <Button variant="contained" style={{height: 50}}> Sign Out</Button>
+                </Stack>
                 </div>
             </div>
         );

@@ -8,7 +8,7 @@ body{
 
 
 .username{
-   margin-left: 45%;
+   margin-left: 43%;
    margin-bottom: 3%;
 }
 .username button{
@@ -24,16 +24,20 @@ body{
 }
 
 .userlogin button{
-    margin-left: 47%;
-    height: 50%;
-    width: 5%;
+    margin-left: 42%;
     margin-bottom: 2%;
+    height: auto;
+    width: auto;
+}
+.logout{
+    height: 2px;
 }
 
 
 .card{
     
     width: 20%;
+    margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 40%;
     border: 1px solid;
@@ -42,58 +46,64 @@ body{
 
 .userinput{
     margin-left: 42%;
+    
    
 }
 
-.userinput input{
-    height: 50%;
-    width: 20%;
-    margin-bottom: 2%;
+.userinput button{
+    margin-top: 1.5%;
+    margin-left: 2%;
+}
+.textfield{
+    margin: 5%;
 }
 
 
 @media screen and (max-width: 900px){
 
     .username{
-        margin-left: 45%;
+        margin-left: 34%;
         margin-bottom: 3%;
      }
      
      .username img{
          border-radius: 52%;
          margin-bottom: 0px;
-         margin-left: 2.5%;
+         margin-left: 4%;
         
         
      }
      
      .userlogin button{
-         margin-left: 47%;
-         height: 50%;
-         width: 15%;
+         margin-left: 28%;
          margin-bottom: 2%;
      }
      
      
      .card{
          
-         width: 30%;
+         width: 40%;
          margin-bottom: 2%;
-         margin-left: 40%;
+         margin-left: 30%;
          border: 1px solid;
      
      }
+
+     .card img{
+         height: 100%;
+         width: 100%;
+     }
      
      .userinput{
-         margin-left: 45%;
+         margin-left: 30%;
         
      }
      
      .userinput input{
          height: 50%;
-         width: 30%;
+         width: 35%;
          margin-bottom: 2%;
-         margin: 5px;
+         margin-top: 2%;
      }
 
 
