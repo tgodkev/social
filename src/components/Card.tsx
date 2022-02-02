@@ -1,16 +1,45 @@
-import React from 'react'
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+
+import CardContent from '@mui/material/CardContent';
+
+import Avatar from '@mui/material/Avatar';
+
+import Typography from '@mui/material/Typography';
+
 
 interface CardProps {
 message:string,
-name:string
+name:string,
+photo: string,
 }
 
-export const Card: React.FC<CardProps> = (props) => {
-        return (
-            <div>
-                <h1>{props.message}</h1>
-                <h1>{props.name}</h1>
-                <h1></h1>
-            </div>
-        );
+export const Fancy: React.FC<CardProps> = (props) => {
+  
+    return (
+      <Card className='card'>
+        <CardHeader
+          avatar={
+            <Avatar  aria-label="user photo.">
+              <img src={props.photo} alt="" />
+            </Avatar>
+          }
+          
+          title={props.name}
+          
+        />
+
+        <CardContent>
+          <Typography variant="body1" >
+            {props.message}
+          </Typography>
+        </CardContent>
+        
+      </Card>
+    );
 }
+
+
+

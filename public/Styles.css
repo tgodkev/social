@@ -1,4 +1,101 @@
 body{
     margin: 0px;
     padding: 0px;
+    background-color: #FBF8F1;
+}
+
+
+
+
+.username{
+   margin-left: 45%;
+   margin-bottom: 3%;
+}
+.username button{
+    margin-top: 10%;
+    margin-right: 25%;
+}
+.username img{
+    border-radius: 52%;
+    margin-bottom: 0px;
+    margin-left: 2.5%;
+   
+   
+}
+
+.userlogin button{
+    margin-left: 47%;
+    height: 50%;
+    width: 5%;
+    margin-bottom: 2%;
+}
+
+
+.card{
+    
+    width: 20%;
+    margin-bottom: 2%;
+    margin-left: 40%;
+    border: 1px solid;
+
+}
+
+.userinput{
+    margin-left: 42%;
+   
+}
+
+.userinput input{
+    height: 50%;
+    width: 20%;
+    margin-bottom: 2%;
+}
+
+
+@media screen and (max-width: 900px){
+
+    .username{
+        margin-left: 45%;
+        margin-bottom: 3%;
+     }
+     
+     .username img{
+         border-radius: 52%;
+         margin-bottom: 0px;
+         margin-left: 2.5%;
+        
+        
+     }
+     
+     .userlogin button{
+         margin-left: 47%;
+         height: 50%;
+         width: 15%;
+         margin-bottom: 2%;
+     }
+     
+     
+     .card{
+         
+         width: 30%;
+         margin-bottom: 2%;
+         margin-left: 40%;
+         border: 1px solid;
+     
+     }
+     
+     .userinput{
+         margin-left: 45%;
+        
+     }
+     
+     .userinput input{
+         height: 50%;
+         width: 30%;
+         margin-bottom: 2%;
+         margin: 5px;
+     }
+
+
+
 }
