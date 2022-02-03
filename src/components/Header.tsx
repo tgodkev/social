@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
 
                 <Stack spacing={1} direction="row">
                 <Button variant="contained" style={{height: 50}}  onClick={login}>Sign In.</Button>
-               <Button variant="contained" style={{height: 50}}> Sign Out</Button>
+               <Button variant="contained"  style={{height: 50}}  onClick={logout}> Sign Out</Button>
                 </Stack>
                 </div>
             </div>

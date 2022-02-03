@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Header} from './Header';
 import db from '../firebase-config';
-import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp} from 'firebase/firestore';
+import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp, orderBy, Timestamp, limit, query, getFirestore} from 'firebase/firestore';
 import { auth } from '../firebase-config';
 import { useEffect } from 'react';
 import { Fancy } from './Card';
@@ -41,8 +41,13 @@ import Button from '@mui/material/Button';
     }
 
 
+
+
       useEffect(() => {
-        onSnapshot(collection(db, 'messages'), (snapshot) => {
+        const recentMessagesQuery = query(collection(getFirestore(), 'messages'), orderBy('timestamp', 'desc'), limit(12));
+  
+        
+        onSnapshot(recentMessagesQuery, (snapshot) => {
         const data = snapshot.docs.map((doc) => doc.data())
 
           
