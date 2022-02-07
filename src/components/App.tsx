@@ -51,7 +51,7 @@ import Button from '@mui/material/Button';
         const data = snapshot.docs.map((doc) => doc.data())
 
           
-          console.log(data)
+          //console.log(data)
            setUserMessage(data);
            //fireout how to store timestamp in usermassage state.
         })

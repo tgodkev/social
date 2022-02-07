@@ -12,7 +12,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
 
         const [SignedIn, setSignedIn] = useState(false);
         const provider = new GoogleAuthProvider();
-        console.log(SignedIn);
+        //console.log(SignedIn);
         
 
         async function login() {
