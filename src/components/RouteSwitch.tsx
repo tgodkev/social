@@ -5,6 +5,7 @@ import { Profile } from './Profile';
 import db from '../firebase-config';
 import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp, orderBy, Timestamp, limit, query, getFirestore, where} from 'firebase/firestore';
 import { auth } from '../firebase-config';
+import useId from '@mui/material/utils/useId';
 
 
 
@@ -17,9 +18,14 @@ function RouteSwitch(){
 
     }]);
 
+    const user = auth.currentUser
+    let uid = user?.uid
+
+    console.log(uid);
     
+
     useEffect(() => {
-        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where(auth.currentUser? = 'userName') ,orderBy('timestamp', 'desc'), limit(12));
+        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where( uid = 'userName') ,orderBy('timestamp', 'desc'), limit(12));
   
         
         onSnapshot(recentMessagesQuery, (snapshot) => {
