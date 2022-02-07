@@ -3,6 +3,7 @@ import { GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
 import { auth } from '../firebase-config';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
 
@@ -48,6 +49,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
                 <Stack spacing={1} direction="row">
                 <Button variant="contained" style={{height: 50}}  onClick={login}>Sign In.</Button>
                <Button variant="contained"  style={{height: 50}}  onClick={logout}> Sign Out</Button>
+               <Button> <Link to='/profile'>My Profile.</Link></Button>
                 </Stack>
                 </div>
             </div>

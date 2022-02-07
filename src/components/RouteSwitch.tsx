@@ -19,13 +19,13 @@ function RouteSwitch(){
     }]);
 
     const user = auth.currentUser
-    let uid = user?.uid
+    let userName = user?.displayName
 
-    console.log(uid);
+    console.log(userName);
     
 
     useEffect(() => {
-        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where( uid = 'userName') ,orderBy('timestamp', 'desc'), limit(12));
+        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where(userName === 'username'),orderBy('timestamp', 'desc'), limit(12));
   
         
         onSnapshot(recentMessagesQuery, (snapshot) => {
