@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import App from './App';
 import { Profile } from './Profile';
 import db from '../firebase-config';
-import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp, orderBy, Timestamp, limit, query, getFirestore} from 'firebase/firestore';
+import {  collection, addDoc, onSnapshot, DocumentData, serverTimestamp, orderBy, Timestamp, limit, query, getFirestore, where} from 'firebase/firestore';
 import { auth } from '../firebase-config';
 
 
@@ -11,7 +11,7 @@ import { auth } from '../firebase-config';
 function RouteSwitch(){
 
     const [ProfileInfo, setProfileInfo] = useState<DocumentData[]>([{
-        message : '',
+        message : 'thje',
         userName : '',
         photo: '',
 
@@ -19,7 +19,7 @@ function RouteSwitch(){
 
     
     useEffect(() => {
-        const recentMessagesQuery = query(collection(getFirestore(), 'messages'), orderBy('timestamp', 'desc'), limit(12));
+        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where(auth.currentUser? = 'userName') ,orderBy('timestamp', 'desc'), limit(12));
   
         
         onSnapshot(recentMessagesQuery, (snapshot) => {
