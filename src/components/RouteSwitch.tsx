@@ -25,7 +25,7 @@ function RouteSwitch(){
     
 
     useEffect(() => {
-        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),where(userName === 'username'),orderBy('timestamp', 'desc'), limit(12));
+        const recentMessagesQuery = query(collection(getFirestore(), 'messages'),orderBy('timestamp', 'desc'), limit(12));
   
         
         onSnapshot(recentMessagesQuery, (snapshot) => {

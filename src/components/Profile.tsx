@@ -1,4 +1,5 @@
 import React from 'react'
+import { auth } from '../firebase-config';
 
 interface ProfileProps {
 //name: string,
@@ -8,12 +9,16 @@ interface ProfileProps {
 }
 
 
+const name = auth.currentUser?.displayName
+const pic = auth.currentUser?.photoURL!;
+console.log(name);
+
 
 export const Profile: React.FC<ProfileProps> = ({}) => {
         return (
             <div>
-                <h1>name</h1>
-                <h1> img src here </h1>
+                <h1>{name}</h1>
+                <img src={pic} alt="" />
                 <h1>return messages this user has sent.</h1>
             </div>
         );
