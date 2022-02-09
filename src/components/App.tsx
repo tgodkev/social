@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Fancy } from './Card';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { Profile } from './Profile';
 
 
 
@@ -22,7 +23,7 @@ import Button from '@mui/material/Button';
       
     const [NewMessage, setNewMessage] = useState('');
     
-    
+  
 
     function handleChange(event: {target: {value: React.SetStateAction<string>}}){
       let text = event.target.value;

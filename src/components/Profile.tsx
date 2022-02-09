@@ -9,12 +9,11 @@ interface ProfileProps {
 }
 
 
-const name = auth.currentUser?.displayName
 const pic = auth.currentUser?.photoURL!;
-console.log(name);
+const name = auth.currentUser?.displayName
 
 
-export const Profile: React.FC<ProfileProps> = ({}) => {
+export const Profile: React.FC<ProfileProps> = (props) => {
         return (
             <div>
                 <h1>{name}</h1>

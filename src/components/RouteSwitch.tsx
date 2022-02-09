@@ -18,22 +18,20 @@ function RouteSwitch(){
 
     }]);
 
-    const user = auth.currentUser
-    let userName = user?.displayName
-
-    console.log(userName);
+   
     
 
     useEffect(() => {
         const recentMessagesQuery = query(collection(getFirestore(), 'messages'),orderBy('timestamp', 'desc'), limit(12));
   
-        
+        const name = auth.currentUser?.displayName
         onSnapshot(recentMessagesQuery, (snapshot) => {
         const data = snapshot.docs.map((doc) => doc.data())
 
           
           console.log(data)
            setProfileInfo(data);
+       
            //fireout how to store timestamp in usermassage state.
         })
       }, [])
