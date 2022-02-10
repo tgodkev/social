@@ -20,6 +20,8 @@ import { Profile } from './Profile';
       photo: '',
     }])
       
+    
+    
       
     const [NewMessage, setNewMessage] = useState('');
     

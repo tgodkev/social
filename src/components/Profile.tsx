@@ -9,7 +9,7 @@ interface ProfileProps {
 }
 
 
-const pic = auth.currentUser?.photoURL!;
+//const pic = auth.currentUser?.photoURL!;
 const name = auth.currentUser?.displayName
 
 
@@ -17,7 +17,7 @@ export const Profile: React.FC<ProfileProps> = (props) => {
         return (
             <div>
                 <h1>{name}</h1>
-                <img src={pic} alt="" />
+                
                 <h1>return messages this user has sent.</h1>
             </div>
         );
