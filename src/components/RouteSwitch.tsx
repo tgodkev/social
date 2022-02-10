@@ -8,8 +8,15 @@ import { auth } from '../firebase-config';
 import useId from '@mui/material/utils/useId';
 
 
+interface RouteProps {
 
-function RouteSwitch(){
+    ProfileInfo: string,
+    
+    
+    }
+
+
+function RouteSwitch <RouteProps>(){
 
     const [ProfileInfo, setProfileInfo] = useState<DocumentData[]>([{
         message : 'thje',
@@ -24,9 +31,20 @@ function RouteSwitch(){
     useEffect(() => {
         const recentMessagesQuery = query(collection(getFirestore(), 'messages'),orderBy('timestamp', 'desc'), limit(12));
   
-        const name = auth.currentUser?.displayName
         onSnapshot(recentMessagesQuery, (snapshot) => {
         const data = snapshot.docs.map((doc) => doc.data())
+
+
+        const user = auth.currentUser?.displayName;
+
+        function checkMesage(ProfileInfo) {
+            if(ProfileInfo.userName === user ){
+                return(
+                    ProfileInfo
+                )
+            }
+
+        }
 
           
           console.log(data)
@@ -36,8 +54,8 @@ function RouteSwitch(){
         })
       }, [])
 
-
-
+      
+     
 
 
     return(
